@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+	<title>Home</title>
+</head>
+<body>
+
+<p th:text="${message}"></p>
+<form action="/form" method="post" th:object="${userForm}">
+	<div>
+		<TABLE>
+			<TR><TD>名前：</TD><TD><input type="text" th:field="*{name}" /></TD></TR>
+			<TR><TD>年齢：</TD><TD><input type="text" th:field="*{age}" /></TD></TR>
+			<TR><TD>メモ：</TD><TD><textarea cols="30" rows="3" th:field="*{memo}" ></textarea></TD></TR>
+		</TABLE>
+	</div>
+	<div><input type="submit"></div>
+	<div></div>
+</form>
+</body>
+</html>
