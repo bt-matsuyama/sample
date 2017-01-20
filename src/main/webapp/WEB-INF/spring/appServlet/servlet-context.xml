@@ -18,18 +18,18 @@
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".html" />
-		<beans:property name="templateMode" value="HTML" />
-		<beans:property name="characterEncoding" value="UTF-8"/>
-		<beans:property name="cacheable" value="false"/>
+	    <beans:property name="prefix" value="/WEB-INF/views/" />
+	    <beans:property name="suffix" value=".html" />
+	    <beans:property name="templateMode" value="HTML" />
 	</beans:bean>
 
-<beans:bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
-<beans:property name="templateResolver" ref="templateResolver" />
-</beans:bean>
+	<beans:bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+	    <beans:property name="enableSpringELCompiler" value="true" />
+	    <beans:property name="templateResolver" ref="templateResolver" />
+	</beans:bean>
 
-<beans:bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
- <beans:property name="templateEngine" ref="templateEngine" />
-</beans:bean>
+	<beans:bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+	    <beans:property name="templateEngine" ref="templateEngine" />
+	    <beans:property name="characterEncoding" value="UTF-8" />
+	</beans:bean>
 </beans:beans>

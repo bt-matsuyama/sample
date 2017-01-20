@@ -19,9 +19,9 @@ public class InputController {
 		return "input";
 	}
 
-	@RequestMapping(value = "/input", method = RequestMethod.POST)
-	public String post(@Valid @ModelAttribute UserForm form, BindingResult result, Model model) {
-		model.addAttribute("message", form.toString());
-		return "input";
-	}
+//	@RequestMapping(value = "/input", method = RequestMethod.POST)
+//	public String post(@Valid @ModelAttribute UserForm form, BindingResult result, Model model) {
+//		model.addAttribute("message", form.toString());
+//		return "input";
+//	}
 }
